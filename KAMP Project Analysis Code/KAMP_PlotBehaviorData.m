@@ -103,7 +103,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
         
         disp(' ');
         disp(this_group_name);
-        disp(['Repeated-measures ANOVA: p = ' num2str(ranova_pval)]);
+        disp(['Repeated-measures ANOVA: F(' num2str(ranova_tbl{1,2}) ',' num2str(ranova_tbl{2,2}) ') = ' num2str(ranova_tbl{1,4}) ', p = ' num2str(ranova_pval)]);
         
         for t = 3:8
             post_data_cmp = this_group_data(:, 2);
@@ -211,7 +211,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Pre: p = ' num2str(p) sig_rows_str]);
+    disp(['Pre: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = post;
     independent_variable = {groups};
@@ -229,7 +229,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Post: p = ' num2str(p) sig_rows_str]);
+    disp(['Post: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk1;
     independent_variable = {groups};
@@ -247,7 +247,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk1: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk1: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk2;
     [p, t2, stats] = anovan(dependent_variable, independent_variable, 'display', 'off', 'model', 'full', 'varnames', {'Group'});
@@ -264,7 +264,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk2: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk2: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk3;
     [p, t2, stats] = anovan(dependent_variable, independent_variable, 'display', 'off', 'model', 'full', 'varnames', {'Group'});
@@ -281,7 +281,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk3: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk3: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk4;
     [p, t2, stats] = anovan(dependent_variable, independent_variable, 'display', 'off', 'model', 'full', 'varnames', {'Group'});
@@ -298,7 +298,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk4: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk4: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk5;
     [p, t2, stats] = anovan(dependent_variable, independent_variable, 'display', 'off', 'model', 'full', 'varnames', {'Group'});
@@ -315,7 +315,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk5: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk5: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     dependent_variable = wk6;
     [p, t2, stats] = anovan(dependent_variable, independent_variable, 'display', 'off', 'model', 'full', 'varnames', {'Group'});
@@ -332,7 +332,7 @@ function KAMP_PlotBehaviorData ( kamp_project_data, parameter_name )
             sig_rows_str = [sig_rows_str ' (' g1_str ' vs ' g2_str ', p = ' num2str(c(this_row_idx, 6)) ') '];
         end
     end
-    disp(['Wk6: p = ' num2str(p) sig_rows_str]);
+    disp(['Wk6: F(' num2str(t2{2, 3}) ',' num2str(t2{3, 3}) ') = ' num2str(t2{2,6}) ', p = ' num2str(p) sig_rows_str]);
     
     %Now let's do a Kruskal-Wallis test at each timepoint
     disp(' ');
